@@ -99,6 +99,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
                     <TextView
+                        android:id="numberOfCans"
                         android:layout_marginTop="12dp"
                         android:textColor="@color/black"
                         android:textSize="18sp"
@@ -164,6 +165,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
                     <TextView
+                        android:id="CollectedMoney"
                         android:layout_marginTop="12dp"
                         android:textColor="@color/black"
                         android:textSize="18sp"

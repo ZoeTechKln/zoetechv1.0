@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     CardView cardNumber_of_Cans;
     CardView cardRemaining_Oil_Amount;
     CardView cardMoney;
+
+    TextView noOfCans;
 
 
     @Override
