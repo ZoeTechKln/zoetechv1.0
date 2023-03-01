@@ -99,7 +99,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
                     <TextView
-                        android:id="numberOfCans"
+                        android:id="@id/cardNumber_of_Cans"
                         android:layout_marginTop="12dp"
                         android:textColor="@color/black"
                         android:textSize="18sp"
@@ -165,7 +165,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"/>
                     <TextView
-                        android:id="CollectedMoney"
+                        android:id="@id/Collected_Money"
                         android:layout_marginTop="12dp"
                         android:textColor="@color/black"
                         android:textSize="18sp"
