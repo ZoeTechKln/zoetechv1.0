@@ -133,6 +133,7 @@
                         android:layout_height="80dp"/>
 
                     <TextView
+                        android:id="@+id/Remaining_Oil_Amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
