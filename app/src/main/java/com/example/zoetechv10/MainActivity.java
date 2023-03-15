@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     CardView cardPrice_per_1kg;
@@ -16,10 +20,12 @@ public class MainActivity extends AppCompatActivity {
     CardView cardMoney;
 
     TextView noOfCans;
+    TextView collectedMoney;
+    DatabaseReference databaseReference;
+    //String
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -27,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         cardNumber_of_Cans = findViewById(R.id.cardNumber_of_Cans);
         cardRemaining_Oil_Amount = findViewById(R.id.cardRemaining_Oil_Amount);
         cardMoney = findViewById(R.id.cardMoney);
+        //firebaseToApp
+        noOfCans=(TextView) findViewById(R.id.numberOfCans);
+        collectedMoney=(TextView) findViewById(R.id.Collected_Money);
+
 
         cardPrice_per_1kg.setOnClickListener(new View.OnClickListener() {
             @Override
