@@ -1,5 +1,6 @@
 package com.example.zoetechv10;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -8,21 +9,19 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView cardPrice_per_1kg;
-    CardView cardNumber_of_Cans;
-    CardView cardRemaining_Oil_Amount;
-    CardView cardMoney;
+    CardView cardPrice_per_1kg,cardNumber_of_Cans,cardRemaining_Oil_Amount,cardMoney;
 
-    TextView noOfCans;
-    TextView collectedMoney;
-    DatabaseReference databaseReference;
-    //String
+    //TextView noOfCans,collectedMoney;
 
 
         protected void onCreate(Bundle savedInstanceState) {
@@ -34,38 +33,32 @@ public class MainActivity extends AppCompatActivity {
         cardRemaining_Oil_Amount = findViewById(R.id.cardRemaining_Oil_Amount);
         cardMoney = findViewById(R.id.cardMoney);
         //firebaseToApp
-        noOfCans=(TextView) findViewById(R.id.numberOfCans);
-        collectedMoney=(TextView) findViewById(R.id.Collected_Money);
+            FirebaseDatabase database =FirebaseDatabase.getInstance();
+            DatabaseReference cansRef=database.getReference("canAmount");
+
+            cansRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    long numOfCans=(long) snapshot.getValue();
+                    //update the text with value from database
+                    TextView noOfCansTextView=findViewById(R.id.numberOfCans);
+                    noOfCansTextView.setText(Long.toString(numOfCans));
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(MainActivity.this, "Database Error!!", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+        //noOfCans=(TextView) findViewById(R.id.numberOfCans);
+        //collectedMoney=(TextView) findViewById(R.id.Collected_Money);
 
 
-        cardPrice_per_1kg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showToast("Price_per_1kg Clicked");
-            }
-        });
-        cardNumber_of_Cans.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showToast("Number_of_Cans Clicked");
-            }
-        });
-        cardRemaining_Oil_Amount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showToast("Remaining_Oil_Amount Clicked");
-            }
-        });
-        cardMoney.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showToast("Money Clicked");
-            }
-        });
 
-    }
 
-    private void showToast(String message){
-        Toast.makeText(this,"message", Toast.LENGTH_SHORT).show();
+
+
+
     }
 }
