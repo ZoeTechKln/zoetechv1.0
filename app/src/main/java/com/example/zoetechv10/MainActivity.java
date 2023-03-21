@@ -21,32 +21,51 @@ public class MainActivity extends AppCompatActivity {
 
     CardView cardPrice_per_1kg,cardNumber_of_Cans,cardRemaining_Oil_Amount,cardMoney;
 
-    //TextView noOfCans,collectedMoney;
+    TextView moneyTextView,noOfCansTextView,todayOilPriceTextView;
 
 
         protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cardPrice_per_1kg = findViewById(R.id.cardPrice_per_1kg);
-        cardNumber_of_Cans = findViewById(R.id.cardNumber_of_Cans);
-        cardRemaining_Oil_Amount = findViewById(R.id.cardRemaining_Oil_Amount);
-        cardMoney = findViewById(R.id.cardMoney);
+            moneyTextView=findViewById(R.id.Collected_Money);
+            noOfCansTextView=findViewById(R.id.numberOfCans);
+            todayOilPriceTextView=findViewById(R.id.todayOilPrice);
+
+
         //firebaseToApp
             FirebaseDatabase database =FirebaseDatabase.getInstance();
+
             DatabaseReference cansRef=database.getReference("canAmount");
             DatabaseReference moneyCol=database.getReference("money");
+            DatabaseReference todayOilPrice=database.getReference("TodayOilPrice");
 
+
+
+            todayOilPrice.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    long todayOilPrice=(long) snapshot.getValue();
+                    todayOilPriceTextView.setText(Long.toString(todayOilPrice)+" Rs");
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(MainActivity.this, "Database Error!!", Toast.LENGTH_SHORT).show();
+
+                }
+            });
             moneyCol.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     long moneycollection=(long) snapshot.getValue();
-                    TextView moneyTextView=findViewById(R.id.Collected_Money);
                     moneyTextView.setText(Long.toString(moneycollection));
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(MainActivity.this, "Database Error!!", Toast.LENGTH_SHORT).show();
 
                 }
             });
@@ -56,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     long numOfCans=(long) snapshot.getValue();
                     //update the text with value from database
-                    TextView noOfCansTextView=findViewById(R.id.numberOfCans);
                     noOfCansTextView.setText(Long.toString(numOfCans));
                 }
 
