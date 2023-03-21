@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     long moneycollection=(long) snapshot.getValue();
-                    TextView moneyTextView=findViewById(R.id.);
+                    TextView moneyTextView=findViewById(R.id.Collected_Money);
                     moneyTextView.setText(Long.toString(moneycollection));
                 }
 
