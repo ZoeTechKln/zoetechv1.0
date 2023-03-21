@@ -35,6 +35,21 @@ public class MainActivity extends AppCompatActivity {
         //firebaseToApp
             FirebaseDatabase database =FirebaseDatabase.getInstance();
             DatabaseReference cansRef=database.getReference("canAmount");
+            DatabaseReference moneyCol=database.getReference("money");
+
+            moneyCol.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    long moneycollection=(long) snapshot.getValue();
+                    TextView moneyTextView=findViewById(R.id.);
+                    moneyTextView.setText(Long.toString(moneycollection));
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
 
             cansRef.addValueEventListener(new ValueEventListener() {
                 @Override
