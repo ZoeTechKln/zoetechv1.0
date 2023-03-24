@@ -19,7 +19,6 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView cardPrice_per_1kg,cardNumber_of_Cans,cardRemaining_Oil_Amount,cardMoney;
 
     TextView moneyTextView,noOfCansTextView,todayOilPriceTextView;
 
@@ -36,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         //firebaseToApp
             FirebaseDatabase database =FirebaseDatabase.getInstance();
 
-            DatabaseReference cansRef=database.getReference("canAmount");
-            DatabaseReference moneyCol=database.getReference("money");
+            DatabaseReference cansRef=database.getReference("Function_1/CanAmount");
+            DatabaseReference moneyCol=database.getReference("Function_1/Price");
             DatabaseReference todayOilPrice=database.getReference("TodayOilPrice");
 
 
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     long todayOilPrice=(long) snapshot.getValue();
-                    todayOilPriceTextView.setText(Long.toString(todayOilPrice)+" Rs");
+                    todayOilPriceTextView.setText("Rs. "+Long.toString(todayOilPrice));
 
                 }
 
@@ -59,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
             moneyCol.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    long moneycollection=(long) snapshot.getValue();
-                    moneyTextView.setText(Long.toString(moneycollection));
+                    long moneyCollection=(long) snapshot.getValue();
+                    moneyTextView.setText("Rs. "+Long.toString(moneyCollection));
                 }
 
                 @Override
@@ -84,14 +83,5 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-        //noOfCans=(TextView) findViewById(R.id.numberOfCans);
-        //collectedMoney=(TextView) findViewById(R.id.Collected_Money);
-
-
-
-
-
-
-
     }
 }
