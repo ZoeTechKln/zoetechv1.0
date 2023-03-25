@@ -2,10 +2,8 @@ package com.example.zoetechv10;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +13,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             moneyTextView=findViewById(R.id.Collected_Money);
             noOfCansTextView=findViewById(R.id.numberOfCans);
             todayOilPriceTextView=findViewById(R.id.todayOilPrice);
+
 
 
         //firebaseToApp
