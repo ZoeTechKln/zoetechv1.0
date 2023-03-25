@@ -8,4 +8,6 @@
     <string name="logo_of_the_zoe_tech">logo of the zoe tech</string>
     <string name="oil">Oil</string>
     <string name="dashboard">Dashboard</string>
+    <string name="today_oil_price">Today Oil Price</string>
+    <string name="price">Price</string>
 </resources>

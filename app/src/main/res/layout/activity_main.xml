@@ -28,8 +28,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/orange"
                 android:textSize="35sp"
-                android:textStyle="bold"
-                >
+                android:textStyle="bold">
 
             </TextView>
         </RelativeLayout>
