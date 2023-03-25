@@ -10,4 +10,10 @@
     <string name="dashboard">Dashboard</string>
     <string name="today_oil_price">Today Oil Price</string>
     <string name="price">Price</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="function2">Function 2</string>
+    <string name="function_3">Function 3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
