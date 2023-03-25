@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new HomeFragment()).commit();
-                navigationView.setCheckedItem(R.id.function1);
+                navigationView.setCheckedItem(R.id.home);
             }
             //toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
         }

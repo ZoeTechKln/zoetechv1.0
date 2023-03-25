@@ -19,10 +19,9 @@
             android:layout_height="wrap_content"
             app:title="Toolbar"
             app:titleTextColor="@color/white"
-            android:background="@color/coral"
+            android:background="#FFD49CFD"
             android:elevation="3dp"
             android:id="@+id/toolbar"
-
             />
 
         <FrameLayout
