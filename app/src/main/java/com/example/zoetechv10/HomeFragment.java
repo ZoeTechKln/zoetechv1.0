@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
-    TextView moneyTextView,noOfCansTextView,todayOilPriceTextView,oilTextView,emergencyOilTextView;
+    TextView totalMoneyTextView,totalOilAmountTextView,todayOilPriceTextView,remainingOilTextView,totalEmergencyOilTextView;
 
 
     public HomeFragment() {
@@ -36,22 +36,23 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        moneyTextView = (TextView) view.findViewById(R.id.totalMoney);
-        noOfCansTextView = (TextView) view.findViewById(R.id.canAmount);
         todayOilPriceTextView = (TextView) view.findViewById(R.id.todayOilPrice);
-        oilTextView=(TextView) view.findViewById(R.id.Remaining_Oil_Amount);
-        emergencyOilTextView=(TextView) view.findViewById(R.id.emergencyOil);
+        remainingOilTextView=(TextView) view.findViewById(R.id.Remaining_Oil_Amount);
+        totalOilAmountTextView = (TextView) view.findViewById(R.id.oilAmount);
+        totalMoneyTextView = (TextView) view.findViewById(R.id.totalMoney);
+        totalEmergencyOilTextView=(TextView) view.findViewById(R.id.emergencyOil);
 
 
         //firebaseToApp
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-//can amount eka wadak nee
-        DatabaseReference cansRef = database.getReference("Function_1/CanAmount");
-        DatabaseReference moneyCol = database.getReference("Function_1/Price");
-        DatabaseReference todayOilPrice = database.getReference("TodayOilPrice");
 
+        DatabaseReference todayOilPriceRef = database.getReference("TodayOilPrice");
+        DatabaseReference remainingOilRef = database.getReference("RemainingOil");
+        DatabaseReference totalOilAmountRef = database.getReference("TotalOilAmount");
+        DatabaseReference totalMoneyRef = database.getReference("TotalMoney");
+        DatabaseReference totalEmergencyOilAmountRef = database.getReference("TotalEmergencyOil");
 
-        todayOilPrice.addValueEventListener(new ValueEventListener() {
+        todayOilPriceRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 long todayOilPrice = (long) snapshot.getValue();
@@ -65,11 +66,26 @@ public class HomeFragment extends Fragment {
 
             }
         });
-        moneyCol.addValueEventListener(new ValueEventListener() {
+        remainingOilRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                long moneyCollection = (long) snapshot.getValue();
-                moneyTextView.setText("Rs. " + Long.toString(moneyCollection));
+                long remainingOilAmount = (long) snapshot.getValue();
+                remainingOilTextView.setText(Long.toString(remainingOilAmount)+" Kg");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                remainingOilTextView.setText("Error!!");
+                Toast.makeText(getActivity(), "Database Error!!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        totalOilAmountRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                long totalOilAmount = (long) snapshot.getValue();
+                totalOilAmountTextView.setText(Long.toString(totalOilAmount)+" Kg");
             }
 
             @Override
@@ -79,12 +95,25 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        cansRef.addValueEventListener(new ValueEventListener() {
+        totalMoneyRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                long numOfCans = (long) snapshot.getValue();
-                //update the text with value from database
-                noOfCansTextView.setText(Long.toString(numOfCans));
+                long totalMoney = (long) snapshot.getValue();
+                totalMoneyTextView.setText("Rs. "+Long.toString(totalMoney));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getActivity(), "Database Error!!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        totalEmergencyOilAmountRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                long totalEmergencyOil = (long) snapshot.getValue();
+                totalEmergencyOilTextView.setText(Long.toString(totalEmergencyOil)+" Kg");
             }
 
             @Override

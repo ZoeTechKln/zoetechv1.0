@@ -83,7 +83,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardNumber_of_Cans"
+                android:id="@+id/cardRemaining_Oil_Amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -101,23 +101,24 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:layout_marginTop="15dp"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/oiltank" />
+                        android:src="@drawable/noun_storage_tank" />
 
                     <TextView
-                        android:id="@+id/canAmount"
+                        android:id="@+id/Remaining_Oil_Amount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="#of Cans"
+                        android:text="Stock"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardRemaining_Oil_Amount"
+                android:id="@+id/cardOilAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -140,11 +141,11 @@
                         android:src="@drawable/barel" />
 
                     <TextView
-                        android:id="@+id/Remaining_Oil_Amount"
+                        android:id="@+id/oilAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="@string/oil"
+                        android:text="OilAmt"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>

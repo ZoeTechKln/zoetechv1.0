@@ -12,15 +12,15 @@
         <item
             android:id="@+id/function1"
             android:icon="@drawable/baseline_cyclone_24"
-            android:title="18 KG oil Cans"/>
+            android:title="18 KG oil cans"/>
         <item
             android:id="@+id/function2"
             android:icon="@drawable/baseline_cyclone_24"
-            android:title="Any amount of KG per Can"/>
+            android:title="Custom amount per Can"/>
         <item
             android:id="@+id/function3"
             android:icon="@drawable/baseline_cyclone_24"
-            android:title="Price Filling"/>
+            android:title="Dynamic price fill"/>
         <item
             android:id="@+id/function4"
             android:icon="@drawable/baseline_cyclone_24"
@@ -32,7 +32,7 @@
         <item
             android:id="@+id/function6"
             android:icon="@drawable/baseline_cyclone_24"
-            android:title="Today Oil Price"/>
+            android:title="Today oil price"/>
 
         <item
             android:id="@+id/messages"

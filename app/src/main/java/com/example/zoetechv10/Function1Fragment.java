@@ -79,7 +79,7 @@ public class Function1Fragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 long func1oilAmount = (long) snapshot.getValue();
                 //update the text with value from database
-                oilAmountTextView.setText(Long.toString(func1oilAmount));
+                oilAmountTextView.setText(Long.toString(func1oilAmount)+" Kg");
             }
 
             @Override
@@ -108,7 +108,7 @@ public class Function1Fragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 long func1emergencyOil = (long) snapshot.getValue();
                 //update the text with value from database
-                oilAmountTextView.setText(Long.toString(func1emergencyOil));
+                emergencyTextView.setText(Long.toString(func1emergencyOil)+" Kg");
             }
 
             @Override
