@@ -7,20 +7,32 @@
 
         <item
             android:id="@+id/home"
-            android:icon="@drawable/baseline_cyclone_24"
+            android:icon="@drawable/baseline_home_24"
             android:title="Home"/>
         <item
             android:id="@+id/function1"
             android:icon="@drawable/baseline_cyclone_24"
-            android:title="Function 1"/>
+            android:title="18 KG oil Cans"/>
         <item
             android:id="@+id/function2"
             android:icon="@drawable/baseline_cyclone_24"
-            android:title="Function 2"/>
+            android:title="Any amount of KG per Can"/>
         <item
             android:id="@+id/function3"
             android:icon="@drawable/baseline_cyclone_24"
-            android:title="Function 3"/>
+            android:title="Price Filling"/>
+        <item
+            android:id="@+id/function4"
+            android:icon="@drawable/baseline_cyclone_24"
+            android:title="Freedom"/>
+        <item
+            android:id="@+id/function5"
+            android:icon="@drawable/baseline_cyclone_24"
+            android:title="Any amount of KG"/>
+        <item
+            android:id="@+id/function6"
+            android:icon="@drawable/baseline_cyclone_24"
+            android:title="Today Oil Price"/>
 
         <item
             android:id="@+id/messages"

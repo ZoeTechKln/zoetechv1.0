@@ -80,7 +80,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/Function3_Card_Remaining_Oil_Amount"
+                android:id="@+id/Func3cardOil_Amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -103,7 +103,7 @@
                         android:src="@drawable/barel" />
 
                     <TextView
-                        android:id="@+id/Function3RemainingOilAmount"
+                        android:id="@+id/Func3OilAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -137,11 +137,45 @@
                         android:src="@drawable/money" />
 
                     <TextView
-                        android:id="@+id/Func3totalMoney"
+                        android:id="@+id/Func3Money"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:text="Money"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Func3_cardEmergencyOil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/baseline_emergency_24" />
+
+                    <TextView
+                        android:id="@+id/Func3emergencyOil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Em Oil"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
                 </LinearLayout>

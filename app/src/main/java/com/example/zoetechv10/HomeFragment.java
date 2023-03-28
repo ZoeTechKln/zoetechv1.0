@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
-    TextView moneyTextView,noOfCansTextView,todayOilPriceTextView;
+    TextView moneyTextView,noOfCansTextView,todayOilPriceTextView,oilTextView,emergencyOilTextView;
 
 
     public HomeFragment() {
@@ -39,11 +39,13 @@ public class HomeFragment extends Fragment {
         moneyTextView = (TextView) view.findViewById(R.id.totalMoney);
         noOfCansTextView = (TextView) view.findViewById(R.id.canAmount);
         todayOilPriceTextView = (TextView) view.findViewById(R.id.todayOilPrice);
+        oilTextView=(TextView) view.findViewById(R.id.Remaining_Oil_Amount);
+        emergencyOilTextView=(TextView) view.findViewById(R.id.emergencyOil);
 
 
         //firebaseToApp
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-
+//can amount eka wadak nee
         DatabaseReference cansRef = database.getReference("Function_1/CanAmount");
         DatabaseReference moneyCol = database.getReference("Function_1/Price");
         DatabaseReference todayOilPrice = database.getReference("TodayOilPrice");

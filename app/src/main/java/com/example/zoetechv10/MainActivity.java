@@ -83,6 +83,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 drawerLayout.closeDrawer(GravityCompat.START);
                 Toast.makeText(MainActivity.this, "Function3", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.function4:
+                fragmentR(new Function4Fragment());
+                drawerLayout.closeDrawer(GravityCompat.START);
+                Toast.makeText(MainActivity.this, "Function4", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.function5:
+                fragmentR(new Function5Fragment());
+                drawerLayout.closeDrawer(GravityCompat.START);
+                Toast.makeText(MainActivity.this, "Function5", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.function6:
+                fragmentR(new PriceSetFragment());
+                drawerLayout.closeDrawer(GravityCompat.START);
+                Toast.makeText(MainActivity.this, "Today oil price", Toast.LENGTH_SHORT).show();
+                break;
 
             case R.id.messages:
                 drawerLayout.closeDrawer(GravityCompat.START);

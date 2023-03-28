@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bgmain"
-    tools:context=".Function2Fragment">
+    tools:context=".Function4Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,11 +20,11 @@
             android:layout_marginRight="20dp">
 
             <TextView
-                android:id="@+id/txtFunction2"
+                android:id="@+id/txtFunction4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
-                android:text="@string/function2"
+                android:text="Function 4"
                 android:textAlignment="center"
                 android:textColor="@color/orange"
                 android:textSize="35sp"
@@ -46,7 +46,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/Function2_Card_Number_of_Cans"
+                android:id="@+id/Function4_Card_Number_of_Cans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -69,7 +69,7 @@
                         android:src="@drawable/oil_can" />
 
                     <TextView
-                        android:id="@+id/Func2canAmount"
+                        android:id="@+id/Func4canAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -80,7 +80,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/Func2cardOil_Amount"
+                android:id="@+id/Func4cardOil_Amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -103,7 +103,7 @@
                         android:src="@drawable/barel" />
 
                     <TextView
-                        android:id="@+id/Func2OilAmount"
+                        android:id="@+id/Func4OilAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -114,7 +114,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/Function2_Card_Money"
+                android:id="@+id/Function4_Card_Money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -137,7 +137,7 @@
                         android:src="@drawable/money" />
 
                     <TextView
-                        android:id="@+id/Func2Money"
+                        android:id="@+id/Func4Money"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -146,8 +146,9 @@
                         android:textSize="18sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/Func2_cardEmergencyOil"
+                android:id="@+id/Func4_cardEmergencyOil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
@@ -170,7 +171,7 @@
                         android:src="@drawable/baseline_emergency_24" />
 
                     <TextView
-                        android:id="@+id/Func2emergencyOil"
+                        android:id="@+id/Func4emergencyOil"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
