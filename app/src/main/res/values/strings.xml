@@ -16,4 +16,9 @@
     <string name="function_3">Function 3</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="function1">Function1</string>
+    <string name="number_of_cans">#of Cans</string>
+    <string name="money">Money</string>
+    <string name="em_oil">Em Oil</string>
+    <string name="pictureofmoney">pictureOfMoney</string>
 </resources>
