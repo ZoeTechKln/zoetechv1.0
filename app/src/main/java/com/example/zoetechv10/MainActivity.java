@@ -11,17 +11,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 
+
 import android.os.Bundle;
+
 import android.view.MenuItem;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,12 +30,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     NavigationView navigationView;
 
+    //session time out
+
+
 
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
+            //permission
 
+
+            //start of toolbar
             toolbar = findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 
@@ -98,6 +102,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 drawerLayout.closeDrawer(GravityCompat.START);
                 Toast.makeText(MainActivity.this, "Today oil price", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.reportGen:
+                fragmentR(new ReportFragment());
+                drawerLayout.closeDrawer(GravityCompat.START);
+                Toast.makeText(MainActivity.this, "Report Generate", Toast.LENGTH_SHORT).show();
+                break;
 
             case R.id.messages:
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -128,7 +137,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.replace(R.id.frameLayout,fragment );
         fragmentTransaction.commit();
 
-
-
     }
+
 }

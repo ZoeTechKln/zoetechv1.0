@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
-                android:text="@string/_18kg_oil_cans"
+                android:text="18Kg Oil Cans"
                 android:textAlignment="center"
                 android:textColor="@color/orange"
                 android:textSize="35sp"
@@ -60,6 +60,13 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
+                    <TextView
+                        android:id="@+id/labelName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#of Cans"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:layout_width="80dp"
@@ -94,6 +101,13 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
+                    <TextView
+                        android:id="@+id/labelName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Oil"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:layout_width="80dp"
@@ -128,6 +142,13 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
+                    <TextView
+                        android:id="@+id/labelName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Money"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:layout_width="80dp"
@@ -163,6 +184,13 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="16dp">
+                    <TextView
+                        android:id="@+id/labelName4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Em Oil"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
 
                     <ImageView
                         android:layout_width="80dp"
